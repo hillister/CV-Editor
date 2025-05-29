@@ -25,7 +25,11 @@ function GeneralInfo(){
 
     function handleClick(e){
         e.preventDefault();
-        setIsSubmitted(true);
+        if(isSubmitted === false){
+            setIsSubmitted(true);
+        } else {
+            setIsSubmitted(false);
+        }
     }
 
     return(
@@ -40,15 +44,15 @@ function GeneralInfo(){
 
             
             
-            <form>
+            <form style={{display: isSubmitted ? 'none' : 'block'}}>
                 <h4>General Info</h4>
                 <input placeholder='Name' type='text' value={name} onChange={handleSetName} /> <br/>
                 <input placeholder='Phone' type='number' value={phone} onChange={handleSetPhone} /> <br/>
                 <input placeholder='Email' type='text' value={email} onChange={handleSetEmail}/> <br/>
                 <input placeholder='Address' type='text' value={address} onChange={handleSetAddress} /> <br/>
-
-                <button onClick={handleClick}>Submit</button>
             </form>
+
+            <button onClick={handleClick}>{isSubmitted ? 'Edit' : 'Submit'}</button>
 
         </div>
     )
