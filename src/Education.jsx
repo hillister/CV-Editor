@@ -27,17 +27,11 @@ function Education(){
     }
 
     return(
-        <>
+        <div className='content'>
             
-            <div className='preview' style={{display: isSubmitted ? 'block' : 'none'}}>
-                <h2>Education</h2>
-                <h3>{schoolName}</h3>
-                <h4>{certificate}</h4>
-                <h4>{year}</h4>
-            </div>
             <div className='editor'>
-                <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                    <h2>Education</h2>
+                <form>
+                    <h2 className="heading">Education</h2>
                     <label>School Name: </label>
                     <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
                     <label>Degree / Field of Study: </label>
@@ -45,10 +39,16 @@ function Education(){
                     <label>Year Awarded: </label>
                     <input type='date' value={year} onChange={handleYear}/> <br/>
                 </form>
-                <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
+            <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
             </div>
 
-        </>
+            <div className='preview' style={{display: isSubmitted ? 'block' : 'none'}}>
+                <h2>Education</h2>
+                <h3>{schoolName}</h3>
+                <h4>{certificate}</h4>
+                <h4>{year}</h4>
+            </div>
+        </div>
     )
 }
 
