@@ -30,14 +30,14 @@ function Education(){
         <div className='content'>
             
             <div className='editor'>
-                <form>
+                <form className='educationForm'>
                     <h2 className="heading">Education</h2>
                     <label>School Name: </label>
-                    <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
+                    <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/>
                     <label>Degree / Field of Study: </label>
-                    <input placeholder='B.A. in Communication' type='text' value={certificate} onChange={handleCertificate}/> <br/>
+                    <input placeholder='B.A. in Communication' type='text' value={certificate} onChange={handleCertificate}/>
                     <label>Year Awarded: </label>
-                    <input type='date' value={year} onChange={handleYear}/> <br/>
+                    <input type='date' value={year} onChange={handleYear}/>
                 </form>
             <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
             </div>
