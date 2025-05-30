@@ -49,13 +49,20 @@ function Experience(){
             </div>
 
             <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                <input placeholder='Company Name' type="text" value={companyName} onChange={handleCompanyName}/><br/>
-                <input placeholder='Position' type="text" value={position} onChange={handlePosition}/><br/>
+                <label>Company Name: </label>
+                <input placeholder='Acme Corp, New York, NY' type="text" value={companyName} onChange={handleCompanyName}/><br/>
+                <label>Position: </label>
+                <input placeholder='Project Manager' type="text" value={position} onChange={handlePosition}/><br/>
                 <label>From: </label>
                 <input type="date" value={startDate} onChange={handleStartDate}/>
                 <label>To: </label>
                 <input type="date" value={endDate} onChange={handleEndDate}/><br/>
-                <textarea placeholder="Description" value={description} onChange={handleDescription}></textarea><br/>
+                <label>Description: </label>
+                <textarea placeholder="- Led cross-functional teams of 10+ in delivering enterprise software projects.
+                                       - Improved delivery timelines by 25% through optimized workflows.
+                                       - Managed budgets up to $500,000 and maintained 98% client satisfaction." 
+                    value={description} onChange={handleDescription}>
+                </textarea><br/>
             </form>
             <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
 

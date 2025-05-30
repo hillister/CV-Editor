@@ -4,7 +4,7 @@ function Education(){
 
     const [schoolName, setSchoolName] = useState();
     const [certificate, setCertificate] = useState();
-    const [year, setYear] = useState();
+    const [year, setYear] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false)
     function handleSchoolName(e){
         setSchoolName(e.target.value)
@@ -36,9 +36,12 @@ function Education(){
             </div>
 
             <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                <input placeholder='School Name' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
-                <input placeholder='Certificate Name' type='text' value={certificate} onChange={handleCertificate}/> <br/>
-                <input placeholder='Year Awarded' type='number' value={year} onChange={handleYear}/> <br/>
+                <label>School Name: </label>
+                <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
+                <label>Degree / Field of Study: </label>
+                <input placeholder='B.A. in Communication' type='text' value={certificate} onChange={handleCertificate}/> <br/>
+                <label>Year Awarded: </label>
+                <input type='date' value={year} onChange={handleYear}/> <br/>
             </form>
             <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
         </>
