@@ -37,9 +37,9 @@ function GeneralInfo(){
     }
 
     return(
-        <div className='generalInfo'>
+        <>
 
-            <div className='infoDisplay' style={{display: isSubmitted ? 'block' : 'none'}}>
+            <div className='preview' style={{display: isSubmitted ? 'block' : 'none'}}>
                 <h1>{name}</h1>
                 <h3>{phone}</h3>
                 <h3>{email}</h3>
@@ -48,27 +48,29 @@ function GeneralInfo(){
             </div>
 
             
-            
-            <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                <h2>General Info</h2>
-                <label>Full Name: </label>
-                <input placeholder='Jane Doe' type='text' value={name} onChange={handleSetName} /> <br/>
-                <label>Phone Number: </label>
-                <input placeholder='(555) 123-4567' type='number' value={phone} onChange={handleSetPhone} /> <br/>
-                <label>Email Address: </label>
-                <input placeholder='jane.doe@example.com' type='text' value={email} onChange={handleSetEmail}/> <br/>
-                <label>LinkedIn: </label>
-                <input placeholder='linkedin.com/in/janedoe' type='text' value={linkedIn} onChange={handleSetLinkedIn} /> <br/>
-                <label>Professional Summary: </label>
-                <textarea
-                    placeholder='Detail-oriented and highly motivated professional with 5+ years of experience in project management, team leadership, and client communication. Proven track record of delivering projects on time and within budget. Seeking to leverage expertise in operations and team coordination in a dynamic new role.' 
-                    value={summary} onChange={handleSetSummary}>
-                </textarea>
-            </form>
+            <div className='editor'>
+                <form style={{display: isSubmitted ? 'none' : 'block'}}>
+                    <h2>General Info</h2>
+                    <label>Full Name: </label>
+                    <input placeholder='Jane Doe' type='text' value={name} onChange={handleSetName} /> <br/>
+                    <label>Phone Number: </label>
+                    <input placeholder='(555) 123-4567' type='number' value={phone} onChange={handleSetPhone} /> <br/>
+                    <label>Email Address: </label>
+                    <input placeholder='jane.doe@example.com' type='text' value={email} onChange={handleSetEmail}/> <br/>
+                    <label>LinkedIn: </label>
+                    <input placeholder='linkedin.com/in/janedoe' type='text' value={linkedIn} onChange={handleSetLinkedIn} /> <br/>
+                    <label>Professional Summary: </label>
+                    <textarea
+                        placeholder='Detail-oriented and highly motivated professional with 5+ years of experience in project management, team leadership, and client communication. Proven track record of delivering projects on time and within budget. Seeking to leverage expertise in operations and team coordination in a dynamic new role.' 
+                        value={summary} onChange={handleSetSummary}>
+                    </textarea>
+                </form>
 
-            <button onClick={handleClick}>{isSubmitted ? 'Edit' : 'Submit'}</button>
+                <button onClick={handleClick}>{isSubmitted ? 'Edit' : 'Submit'}</button>
 
-        </div>
+            </div>
+
+        </>
     )
 }
 

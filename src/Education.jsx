@@ -28,22 +28,26 @@ function Education(){
 
     return(
         <>
-            <h2>Education</h2>
-            <div className='infoDisplay' style={{display: isSubmitted ? 'block' : 'none'}}>
+            
+            <div className='preview' style={{display: isSubmitted ? 'block' : 'none'}}>
+                <h2>Education</h2>
                 <h3>{schoolName}</h3>
                 <h4>{certificate}</h4>
                 <h4>{year}</h4>
             </div>
+            <div className='editor'>
+                <form style={{display: isSubmitted ? 'none' : 'block'}}>
+                    <h2>Education</h2>
+                    <label>School Name: </label>
+                    <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
+                    <label>Degree / Field of Study: </label>
+                    <input placeholder='B.A. in Communication' type='text' value={certificate} onChange={handleCertificate}/> <br/>
+                    <label>Year Awarded: </label>
+                    <input type='date' value={year} onChange={handleYear}/> <br/>
+                </form>
+                <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
+            </div>
 
-            <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                <label>School Name: </label>
-                <input placeholder='University of Illinois at Urbana-Champaign' type='text' value={schoolName} onChange={handleSchoolName}/> <br/>
-                <label>Degree / Field of Study: </label>
-                <input placeholder='B.A. in Communication' type='text' value={certificate} onChange={handleCertificate}/> <br/>
-                <label>Year Awarded: </label>
-                <input type='date' value={year} onChange={handleYear}/> <br/>
-            </form>
-            <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
         </>
     )
 }

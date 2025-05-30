@@ -40,15 +40,17 @@ function Experience(){
     }
     return(
         <>
-            <h2>Experience:</h2>
-            <div style={{display: isSubmitted ? 'block' : 'none'}}>
+            
+            <div className='preview' style={{display: isSubmitted ? 'block' : 'none'}}>
+                <h2>Experience:</h2>
                 <h3>Company: {companyName}</h3>
                 <h4>Position: {position}</h4>
                 <h4>Year: {startDate} to {endDate}</h4>
                 <p>Description: {description}</p>
             </div>
 
-            <form style={{display: isSubmitted ? 'none' : 'block'}}>
+            <form className='editor' style={{display: isSubmitted ? 'none' : 'block'}}>
+                <h2>Experience:</h2>
                 <label>Company Name: </label>
                 <input placeholder='Acme Corp, New York, NY' type="text" value={companyName} onChange={handleCompanyName}/><br/>
                 <label>Position: </label>
