@@ -45,7 +45,7 @@ function GeneralInfo(){
             
             
             <form style={{display: isSubmitted ? 'none' : 'block'}}>
-                <h4>General Info</h4>
+                <h2>General Info</h2>
                 <input placeholder='Name' type='text' value={name} onChange={handleSetName} /> <br/>
                 <input placeholder='Phone' type='number' value={phone} onChange={handleSetPhone} /> <br/>
                 <input placeholder='Email' type='text' value={email} onChange={handleSetEmail}/> <br/>
