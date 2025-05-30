@@ -41,22 +41,22 @@ function Experience(){
     return(
         <div className='content'>
             <div className="editor">
-                <form>
+                <form className="experienceForm">
                     <h2 className="heading">Experience</h2>
                     <label>Company Name: </label>
-                    <input placeholder='Acme Corp, New York, NY' type="text" value={companyName} onChange={handleCompanyName}/><br/>
+                    <input placeholder='Acme Corp, New York, NY' type="text" value={companyName} onChange={handleCompanyName}/>
                     <label>Position: </label>
-                    <input placeholder='Project Manager' type="text" value={position} onChange={handlePosition}/><br/>
+                    <input placeholder='Project Manager' type="text" value={position} onChange={handlePosition}/>
                     <label>From: </label>
                     <input type="date" value={startDate} onChange={handleStartDate}/>
                     <label>To: </label>
-                    <input type="date" value={endDate} onChange={handleEndDate}/><br/>
+                    <input type="date" value={endDate} onChange={handleEndDate}/>
                     <label>Description: </label>
                     <textarea placeholder="- Led cross-functional teams of 10+ in delivering enterprise software projects.
                                         - Improved delivery timelines by 25% through optimized workflows.
                                         - Managed budgets up to $500,000 and maintained 98% client satisfaction." 
                         value={description} onChange={handleDescription}>
-                    </textarea><br/>
+                    </textarea>
                 </form>
                 <button onClick={handleSubmit}>{isSubmitted ? 'Edit' : 'Submit'}</button>
             </div>

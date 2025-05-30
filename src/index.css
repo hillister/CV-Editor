@@ -18,6 +18,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     padding: 2rem;
     margin-bottom: 2rem; 
+    max-width: 100%;
 }
 
 .heading {
@@ -26,9 +27,8 @@ body {
 }
 
 textarea {
-    width: 40rem;
-    max-width: 100%;
     height: 6rem;
+    resize: vertical;
 
 }
 
@@ -72,23 +72,11 @@ textarea:focus {
     margin-bottom: 1.5rem;
 }
 
-.educationForm {
+
+form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 1rem;
-    row-gap: 1.5rem;
-    align-items: center;
 }
 
-
-.educationForm h2 {
-    grid-column: span 4;
-}
-
-.educationForm label {
-    justify-self: end;
-}
-
-.educationForm input {
-    justify-self: start;
+form input {
+    margin-bottom: 1rem;
 }
